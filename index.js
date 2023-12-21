@@ -2,6 +2,7 @@
 const express = require("express");
 //moduleJS
 //import express from "express";
+const data = require("./data.json");
 
 // Importing dotenv
 require("dotenv").config();
@@ -28,6 +29,11 @@ app.get("/login", (req, res) => {
 //response from youtube
 app.get("/youtube", (req, res) => {
   res.send("<h2>Accessing Youtube Tutorials</h2>");
+});
+
+// json response for project
+app.get("/project", (req, res) => {
+  res.json(data);
 });
 
 //listening to the given port
